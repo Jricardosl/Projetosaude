@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Plataforma de Saúde</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <h1>Plataforma de Saúde</h1>
+
+  <div class="funcionalidade">
+    <h3>Confirmação de Consulta</h3>
+    <button onclick="confirmarConsulta()">Confirmar Consulta</button>
+  </div>
+
+  <div class="funcionalidade">
+    <h3>Lembrete de Consulta</h3>
+    <label for="lembreteData">Escolha o dia da consulta:</label>
+    <input type="date" id="lembreteData">
+    <button onclick="agendarLembrete()">Agendar Lembrete</button>
+  </div>
+
+  <div class="funcionalidade">
+    <h3>Bloco de Notas</h3>
+    <textarea id="blocoNotas" rows="5" cols="40" placeholder="Digite suas anotações..."></textarea><br>
+    <button onclick="salvarNotas()">Salvar</button>
+    <button onclick="carregarNotas()">Carregar</button>
+  </div>
+
+  <div class="funcionalidade">
+    <h3>Escolher Profissional e Local</h3>
+    <label for="profissional">Profissional:</label>
+    <select id="profissional">
+      <option value="">-- selecione --</option>
+      <option value="Dra. Ana Souza (Nutricionista)">Dra. Ana Souza (Nutricionista)</option>
+      <option value="Dr. João Lima (Fisioterapeuta)">Dr. João Lima (Fisioterapeuta)</option>
+      <option value="Dra. Carla Ribeiro (Psicóloga)">Dra. Carla Ribeiro (Psicóloga)</option>
+    </select><br>
+
+    <label for="local">Local:</label>
+    <select id="local">
+      <option value="">-- selecione --</option>
+      <option value="Clínica Centro">Clínica Centro</option>
+      <option value="Unidade Norte">Unidade Norte</option>
+      <option value="Atendimento Online">Atendimento Online</option>
+    </select><br>
+
+    <button onclick="mostrarResumo()">Ver Resumo</button>
+    <p id="resumoEscolha"></p>
+  </div>
+
+  <div class="funcionalidade">
+    <h3>Registrar Orientações</h3>
+    <input type="text" id="tituloOrientacao" placeholder="Ex: Dieta, T.O., Psicoterapia">
+    <textarea id="descricaoOrientacao" rows="4" cols="40" placeholder="Descreva a orientação..."></textarea><br>
+    <button onclick="salvarOrientacao()">Salvar Orientação</button>
+    <ul id="listaOrientacoes"></ul>
+  </div>
+
+  <div class="funcionalidade">
+    <h3>Agendar Consulta</h3>
+    <input type="text" id="nomePaciente" placeholder="Nome do paciente">
+    <input type="date" id="dataConsulta"><br>
+    <button onclick="validarAgendamento()">Agendar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
