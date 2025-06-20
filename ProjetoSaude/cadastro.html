@@ -32,15 +32,34 @@
   </div>
 
   <script>
-    const form = document.getElementById('formCadastro');
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const nome = document.getElementById('nomeCompleto').value;
-      localStorage.setItem('usuario', nome); // salva nome no localStorage
-      alert('Cadastro realizado com sucesso!');
-      form.reset();
-      window.location.href = 'login.html'; // redireciona para login
-    });
-  </script>
+  const form = document.getElementById('formCadastro');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById('nomeCompleto').value;
+    const cpf = document.getElementById('cpf').value;
+    const dataNascimento = document.getElementById('dataNascimento').value;
+    const senha = dataNascimento.replaceAll("-", ""); // senha é a data sem traços
+    const telefone = document.getElementById('telefone').value;
+    const email = document.getElementById('email').value;
+
+    const usuario = {
+      nome,
+      cpf,
+      senha,
+      telefone,
+      email
+    };
+
+    // Salva com chave 'usuario_<cpf>' (igual ao login espera)
+    localStorage.setItem(`usuario_${cpf}`, JSON.stringify(usuario));
+
+    // Marca usuário como logado
+    localStorage.setItem("usuarioLogado", cpf);
+
+    alert("Cadastro realizado com sucesso!");
+    window.location.href = 'login.html';
+  });
+</script>
 </body>
 </html>

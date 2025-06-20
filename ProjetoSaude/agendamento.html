@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamento de Consulta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="usuarioLogado" style="text-align: right; padding: 10px;"></div>
+
+  <h1>Agendamento de Consulta</h1>
+
+  <div class="funcionalidade">
+    <label for="nomePaciente">Nome do paciente:</label>
+    <input type="text" id="nomePaciente" required><br>
+
+    <label for="dataNascimento">Data de nascimento:</label>
+    <input type="date" id="dataNascimento" required><br><br>
+
+    <label for="profissional">Profissional:</label>
+    <select id="profissional" required>
+      <option value="">-- selecione --</option>
+      <option value="Dra. Ana Souza (Nutricionista)">Dra. Ana Souza (Nutricionista)</option>
+      <option value="Dr. João Lima (Fisioterapeuta)">Dr. João Lima (Fisioterapeuta)</option>
+      <option value="Dra. Carla Ribeiro (Psicóloga)">Dra. Carla Ribeiro (Psicóloga)</option>
+    </select><br><br>
+
+    <label for="local">Local:</label>
+    <select id="local" required>
+      <option value="">-- selecione --</option>
+      <option value="Unidade Centro">Unidade Centro</option>
+      <option value="Unidade Norte">Unidade Norte</option>
+      <option value="Atendimento Online">Atendimento Online</option>
+    </select><br><br>
+
+    <button onclick="mostrarResumo()">Ver Resumo</button>
+    <p id="resumoEscolha" style="margin-top: 10px; font-weight: bold;"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
